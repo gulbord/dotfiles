@@ -316,5 +316,11 @@ return {
     { trig = "xx", snippetType = "autosnippet" },
     t("\\times"),
     { condition = tsutils.in_mathzone }
+  ),
+  -- GIVEN
+  s(
+    { trig = "gvn", snippetType = "autosnippet" },
+    t("\\given"),
+    { condition = tsutils.in_mathzone }
   )
 }
