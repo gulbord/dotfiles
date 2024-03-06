@@ -1,0 +1,122 @@
+% Font style file for the Gnos Go font.
+% The normal gnos* font chars are 12pt high, 0pt deep, and 12pt wide
+\font\gnos=gnos % Base glyphs %
+\font\gnosb=gnosb % 1-99 Black
+\font\gnosbi=gnosbi % 100-199 Black
+\font\gnosbii=gnosbii % 200-299 Black
+\font\gnosbiii=gnosbiii % 300-399 Black
+\font\gnosw=gnosw % 1-99 White
+\font\gnoswi=gnoswi % 100-199 White
+\font\gnoswii=gnoswii % 200-299 White
+\font\gnoswiii=gnoswiii % 300-399 White
+\font\gnosbl=gnosbl % a-z in italics, on black stones
+\font\gnoswl=gnoswl % a-z in italics
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Display size Helpers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcount\gnos@fontsize
+\newbox\gnos@box
+\newdimen\gnos@dimen
+\newdimen\gnos@fontpt
+\gnos@fontsize=12 % Default size
+\gnos@fontpt=12pt % Default font dimension
+
+\def\gnosfontsize#1{%
+  \ifnum #1>16\relax%
+    \global\gnos@fontsize=20\relax%
+    \global\gnos@fontpt=20pt\relax%
+    \gnos@fonts{20}\relax%
+  \else%
+  \ifnum #1>14\relax%
+    \global\gnos@fontsize=16\relax%
+    \global\gnos@fontpt=16pt\relax%
+    \gnos@fonts{16}\relax%
+  \else%  
+  \ifnum #1>12\relax% 
+    \global\gnos@fontsize=14\relax%
+    \global\gnos@fontpt=14pt\relax%
+    \gnos@fonts{14}\relax%
+  \else%
+  \ifnum #1>11\relax% 
+    \global\gnos@fontsize=12\relax%
+    \global\gnos@fontpt=12pt\relax%
+    \gnos@fonts{12}\relax%
+  \else%
+  \ifnum #1>10\relax% 
+    \global\gnos@fontsize=11\relax%
+    \global\gnos@fontpt=11pt\relax%
+    \gnos@fonts{11}\relax%
+  \else%
+  \ifnum #1>9\relax% 
+    \global\gnos@fontsize=10\relax%
+    \global\gnos@fontpt=10pt\relax%
+    \gnos@fonts{10}\relax%
+  \else%
+  \ifnum #1>8\relax% 
+    \global\gnos@fontsize=9\relax%
+    \global\gnos@fontpt=9pt\relax%
+    \gnos@fonts{9}\relax%
+  \else%
+    \global\gnos@fontsize=#1\relax%
+    \global\gnos@fontpt=8pt\relax%
+    \gnos@fonts{8}\relax%
+  \fi\fi\fi\fi\fi\fi\fi%
+}
+
+% Width of a goboard intersection
+\newdimen\gnosIntWd
+% Height of a goboard intersection
+\newdimen\gnosIntHt
+% amount to lower stones in \textstone macro, or raise labes on boards.
+\newdimen\gnosTextAdj
+
+\def\gnos@fonts#1{%
+  \font\gnos=gnos at #1truept%
+  \font\gnosb=gnosb at #1truept%
+  \font\gnosbi=gnosbi at #1truept%
+  \font\gnosbii=gnosbii at #1truept%
+  \font\gnosbiii=gnosbiii at #1truept%
+  \font\gnosw=gnosw at #1truept%
+  \font\gnoswi=gnoswi at #1truept%
+  \font\gnoswii=gnoswii at #1truept%
+  \font\gnoswiii=gnoswiii at #1truept%
+  \font\gnoswl=gnoswl at #1truept%
+  \font\gnosbl=gnosbl at #1truept%
+  % Copied from gooemacs.sty
+  \setbox0 \hbox{\gnos +}\global\gnosIntWd=\wd0\global\gnosIntHt=\ht0\global\gnosTextAdj=2pt%
+  % We should be using baselinestretch, but I can't figure out how to get it
+  % working with point values
+  \baselineskip=#1pt
+}
+
+% \gnosfontsize{12}
+
+% Create a label over an intersection
+\def\gnosEmptyLbl#1{\leavevmode\vbox to \gnosIntWd{\vfill\hbox to \gnosIntWd{\hss{\textsf{#1}}\hss}\vfill}}
+
+\def\gnosOverlap#1#2{\leavevmode{\gnos #1}\llap{\vbox to \gnosIntWd{\vfill\hbox to \gnosIntWd{\hss{\textsf{#2}}\hss}\vfill}}}
+
+% Stretch values for reference. Note: the base font size is 12pt
+% Calculated as font/12 + .01
+% 10pt base with:
+% 8pt  - \setstretch{0.67}
+% 9pt  - \setstretch{0.76}
+% 10pt - \setstretch{0.84}
+% 11pt - \setstretch{0.93}
+% 12pt - <none>
+% 14pt - \setstretch{1.18}
+% 16pt - \setstretch{1.34}
+% 20pt - \setstretch{1.68}
+%
+% formula: font/14 - .01 (why?)
+% 12pt base with
+% 8pt  - ?
+% 9pt  - \setstretch{0.63}
+% 10pt - \setstretch{0.70}
+% 11pt - \setstretch{0.76}
+% 12pt - \setstretch{0.84}
+% 14pt - \setstretch{0.99}
+% 16pt - \setstretch{1.12}
+% 20pt - \setstretch{1.41}

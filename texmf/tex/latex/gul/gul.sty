@@ -1,0 +1,55 @@
+\NeedsTeXFormat{LaTeX2e}[2021/06/01]
+\ProvidesPackage{gul}
+
+\RequirePackage{polyglossia}
+\setmainlanguage{italian}
+\PolyglossiaSetup{italian}{indentfirst=false,frenchspacing=true}
+
+\RequirePackage{booktabs}
+\RequirePackage{mathtools}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{mleftright}
+\mleftright
+
+\RequirePackage{fontspec}
+\RequirePackage[math-style=ISO,partial=upright]{unicode-math}
+\RequirePackage{lualatex-math}
+\setmainfont[%
+	Numbers={OldStyle,Proportional},
+	Path={/home/guglielmo/.local/share/fonts/STIX2/},
+	UprightFont=*-Regular.otf,
+	ItalicFont=*-Italic.otf,
+	BoldFont=*-Bold.otf,
+	BoldItalicFont=*-BoldItalic.otf]{STIXTwoText}
+\setsansfont[%
+	Numbers={OldStyle,Proportional},
+	Scale=MatchLowercase]{Fira Sans}
+\setmonofont[Scale=MatchLowercase]{Fira Code}
+\setmathfont[Path={/home/guglielmo/.local/share/fonts/STIX2/}]{STIXTwoMath-Regular.otf}
+
+\RequirePackage[stretch=10,shrink=10,letterspace=50]{microtype}
+\RequirePackage[version=4]{mhchem}
+\RequirePackage[output-decimal-marker={,}]{siunitx}
+\RequirePackage[hidelinks]{hyperref}
+\hypersetup{linktocpage}
+
+\AtBeginDocument{%
+	\renewcommand{\theta}{\vartheta}
+	\renewcommand{\epsilon}{\varepsilon}
+	\renewcommand{\phi}{\varphi}
+	\renewcommand{\hbar}{\hslash}
+	\let\umathpi\pi
+	\renewcommand\pi{\symup\umathpi}%
+	\renewcommand{\leq}{\leqslant}
+	\renewcommand{\geq}{\geqslant}
+	
+	\newcommand{\abbr}[1]{\textsc{\lsstyle #1}}
+	\renewcommand{\vec}[1]{\symbf{#1}}
+	\newcommand{\mk}{\mkern1mu}
+	\newcommand{\mmk}{\mkern-1mu}
+	\newcommand{\eu}{\symrm{e}}
+	\newcommand*{\diff}{\symrm{d}}
+}
+
+\endinput
