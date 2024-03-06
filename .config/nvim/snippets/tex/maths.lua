@@ -187,17 +187,6 @@ return {
     fmta([[<>\sqrt{<>}]], { f(capture_one), d(1, get_visual) }),
     { condition = tsutils.in_mathzone }
   ),
-  -- DERIVATIVE ()
-  s(
-    {
-      trig = "([^%a])dvv*",
-      regTrig = true,
-      wordTrig = false,
-      snippetType = "autosnippet"
-    },
-    fmta([[<>\diff*{<>}{<>}]], { f(capture_one), i(1), i(2) }),
-    { condition = tsutils.in_mathzone }
-  ),
   -- DERIVATIVE
   s(
     {
@@ -207,17 +196,6 @@ return {
       snippetType = "autosnippet"
     },
     fmta([[<>\diff{<>}{<>}]], { f(capture_one), i(1), i(2) }),
-    { condition = tsutils.in_mathzone }
-  ),
-  -- DERIVATIVE (higher-order and )
-  s(
-    {
-      trig = "([^%a])ddv*",
-      regTrig = true,
-      wordTrig = false,
-      snippetType = "autosnippet"
-    },
-    fmta([[<>\diff*[<>]{<>}{<>}]], { f(capture_one), i(1), i(2), i(3) }),
     { condition = tsutils.in_mathzone }
   ),
   -- DERIVATIVE (higher-order)
@@ -231,17 +209,6 @@ return {
     fmta([[<>\diff[<>]{<>}{<>}]], { f(capture_one), i(1), i(2), i(3) }),
     { condition = tsutils.in_mathzone }
   ),
-  -- PARTIAL DERIVATIVE ()
-  s(
-    {
-      trig = "([^%a])pvv*",
-      regTrig = true,
-      wordTrig = false,
-      snippetType = "autosnippet"
-    },
-    fmta([[<>\pdiff*{<>}{<>}]], { f(capture_one), i(1), i(2) }),
-    { condition = tsutils.in_mathzone }
-  ),
   -- PARTIAL DERIVATIVE
   s(
     {
@@ -253,18 +220,7 @@ return {
     fmta([[<>\pdiff{<>}{<>}]], { f(capture_one), i(1), i(2) }),
     { condition = tsutils.in_mathzone }
   ),
-  -- DERIVATIVE (higher-order and )
-  s(
-    {
-      trig = "([^%a])ppv*",
-      regTrig = true,
-      wordTrig = false,
-      snippetType = "autosnippet"
-    },
-    fmta([[<>\pdiff*[<>]{<>}{<>}]], { f(capture_one), i(1), i(2), i(3) }),
-    { condition = tsutils.in_mathzone }
-  ),
-  -- DERIVATIVE (higher-order)
+  -- PARTIAL DERIVATIVE (higher-order)
   s(
     {
       trig = "([^%a])ppv",
