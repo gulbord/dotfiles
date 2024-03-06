@@ -26,12 +26,12 @@ return {
   ),
   -- REFERENCE
   s(
-    { trig = " RR", snippetType = "autosnippet" },
+    { trig = "RR", snippetType = "autosnippet" },
     fmta([[~\ref{<>}]], d(1, get_visual))
   ),
   -- EQUATION REFERENCE
   s(
-    { trig = " eRR", snippetType = "autosnippet" },
+    { trig = "eRR", snippetType = "autosnippet" },
     fmta([[~\eqref{<>}]], d(1, get_visual))
   ),
   -- LABEL
