@@ -69,8 +69,13 @@ return {
   ),
   -- MATHRM SUBSCRIPT
   s(
-    { trig = "sd", snippetType = "autosnippet" },
-    fmta([[_{\mathrm{<>}}]], d(1, get_visual)),
+    {
+      trig = "([%w%)%]%}])sd",
+      regTrig = true,
+      wordTrig = false,
+      snippetType = "autosnippet"
+    },
+    fmta([[<>_{\mathrm{<>}}]], {f(capture_one), d(1, get_visual)}),
     { condition = tsutils.in_mathzone }
   ),
   -- SUPERSCRIPT SHORTCUT
