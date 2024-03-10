@@ -67,7 +67,7 @@ return {
     fmta([[<>^{<>}_{<>}]], { f(capture_one), i(1), i(2) }),
     { condition = tsutils.in_mathzone }
   ),
-  --  SUBSCRIPT
+  -- MATHRM SUBSCRIPT
   s(
     { trig = "sd", snippetType = "autosnippet" },
     fmta([[_{\mathrm{<>}}]], d(1, get_visual)),
