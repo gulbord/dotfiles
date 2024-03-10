@@ -4,7 +4,7 @@ return {
   -- 
   s(
     { trig = "tee" },
-    fmta([[\{<>}]], d(1, get_visual))
+    fmta([[\text{<>}]], d(1, get_visual))
   ),
   -- EMPHASIS
   s(
@@ -14,17 +14,17 @@ return {
   -- ITALIC
   s(
     { trig = "it" },
-    fmta([[\it{<>}]], d(1, get_visual))
+    fmta([[\textit{<>}]], d(1, get_visual))
   ),
   -- BOLD
   s(
     { trig = "bf" },
-    fmta([[\bf{<>}]], d(1, get_visual))
+    fmta([[\textbf{<>}]], d(1, get_visual))
   ),
   -- TYPEWRITER
   s(
     { trig = "tt" },
-    fmta([[\tt{<>}]], d(1, get_visual))
+    fmta([[\texttt{<>}]], d(1, get_visual))
   ),
   -- MATH ROMAN
   s(
