@@ -26,12 +26,12 @@ return {
   ),
   -- REFERENCE
   s(
-    { trig = "([^%a])rr", regTrig = true, wordTrig = false },
+    { trig = "(.)rr", regTrig = true, wordTrig = false },
     fmta([[<>~\ref{<>}]], { f(capture_one), d(1, get_visual) })
   ),
   -- EQUATION REFERENCE
   s(
-    { trig = "([^%a])er", regTrig = true, wordTrig = false },
+    { trig = "(.)er", regTrig = true, wordTrig = false },
     fmta([[<>~\eqref{<>}]], { f(capture_one), d(1, get_visual) })
   ),
   -- LABEL
