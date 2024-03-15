@@ -128,6 +128,9 @@ export PATH="$PATH:$HOME/neovim/bin"
 
 export PATH="$PATH:$HOME/scid/bin"
 
+export WINEPREFIX="$HOME/.win32"
+export WINEARCH=win32
+
 #fpath=(~/.zshfuncs "${fpath[@]}")
 #autoload -Uz $fpath[1]/*(.:t)
 #source ~/.zshfuncs/pod
