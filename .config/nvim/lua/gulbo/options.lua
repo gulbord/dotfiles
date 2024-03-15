@@ -19,7 +19,7 @@ vim.opt.termguicolors = true
 vim.g.python3_host_prog = "/usr/bin/python3"
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "bib,css,lua,r,rmd,stan,tex",
+  pattern = "bib,bug,css,lua,r,rmd,stan,tex",
   callback = function()
     vim.opt_local.shiftwidth = 2
     vim.opt_local.tabstop = 2
