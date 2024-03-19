@@ -1,11 +1,11 @@
 {
   "LuaSnip": { "branch": "master", "commit": "8ae1dedd988eb56441b7858bd1e8554dfadaa46d" },
   "Nvim-R": { "branch": "stable", "commit": "f68f7745fe92429d1fa080a8a7d6d6075be9f752" },
-  "lazy.nvim": { "branch": "main", "commit": "aedcd79811d491b60d0a6577a9c1701063c2a609" },
-  "nvim-treesitter": { "branch": "master", "commit": "c09932bd2de01dc9c01e870fe83060693c67de13" },
+  "lazy.nvim": { "branch": "main", "commit": "83493db50a434a4c5c648faf41e2ead80f96e478" },
+  "nvim-treesitter": { "branch": "master", "commit": "143ca5ce17ae21233101246b5785b90d53aa8329" },
   "plenary.nvim": { "branch": "master", "commit": "f7adfc4b3f4f91aab6caebf42b3682945fbc35be" },
   "stan-vim": { "branch": "master", "commit": "d14f7f5f96e802c48bd2b6e087cf7956054d9f38" },
   "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
-  "tokyonight.nvim": { "branch": "main", "commit": "610179f7f12db3d08540b6cc61434db2eaecbcff" },
-  "vimtex": { "branch": "master", "commit": "a77d14b2e4391c0d3e860708bb1fd56161ab68eb" }
+  "tokyonight.nvim": { "branch": "main", "commit": "c025baf23b62f044eff1f4ef561c45de636f0e32" },
+  "vimtex": { "branch": "master", "commit": "577f7c59a4c0047ef354eb2f6fef39cbdc9a4556" }
 }
