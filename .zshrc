@@ -111,9 +111,9 @@ alias psudo='sudo env PATH="$PATH"'
 #
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
-export INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"
-export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"
+export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info"
+export MANPATH="$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man"
 
 export GOROOT="/home/guglielmo/go/go-1.20"
 export GOPATH="/home/guglielmo/go/pkgs"
