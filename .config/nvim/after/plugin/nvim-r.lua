@@ -1,4 +1,4 @@
-vim.g.R_assign = false
+vim.g.R_assign_map = "<C-,>"
 vim.g.R_rmdchunk = "`r"
 vim.g.R_openhtml = 0
 vim.g.r_indent_align_args = 0
