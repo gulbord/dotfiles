@@ -164,8 +164,6 @@
         {\LARGE\bfseries #1}\par\nobreak
 		\vskip 6\@bskp plus 4pt minus 4pt}}}
 
-
-
 \def\@schapter#1{%
 	\@makeschapterhead{#1}%
 	\@afterheading}
