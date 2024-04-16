@@ -55,7 +55,6 @@ function M.in_comment()
   end
 end
 
--- https://github.com/nvim-treesitter/nvim-treesitter/issues/1184#issuecomment-830388856
 function M.in_mathzone()
   if has_treesitter then
     local buf = vim.api.nvim_get_current_buf()
@@ -63,14 +62,14 @@ function M.in_mathzone()
     while node do
       if MATH_NODES[node:type()] then
         return true
-      elseif node:type() == "math_environment" or node:type() == "generic_environment" then
+      elseif node:type() == "math_environment"
+          or node:type() == "generic_environment" then
         local begin = node:child(0)
         local names = begin and begin:field "name"
-        if
-          names
-          and names[1]
-          and MATH_ENVIRONMENTS[vim.treesitter.get_node_text(names[1], buf):match "[A-Za-z]+"]
-        then
+        if names and names[1]
+                 and MATH_ENVIRONMENTS[
+                   vim.treesitter.get_node_text(names[1], buf):match "[A-Za-z]+"
+                 ] then
           return true
         end
       end
@@ -79,14 +78,6 @@ function M.in_mathzone()
     return false
   end
 end
-
--- function M.in_comment()
--- 	return vim.fn["vimtex#syntax#in_comment"]() == 1
--- end
---
--- function M.in_mathzone()
--- 	return vim.fn["vimtex#syntax#in_mathzone"]() == 1
--- end
 
 function M.in_text()
   return not M.in_mathzone() and not M.in_comment()

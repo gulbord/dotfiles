@@ -7,9 +7,14 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
-vim.keymap.set("n", "<leader>e", ":Lex 30<cr>")
+-- open/focus nvim-tree view
+vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>tf", ":NvimTreeFocus<CR>")
+vim.keymap.set("n", "<leader>tg", ":NvimTreeFindFile<CR>")
 
+-- easier copy-paste on the global register
 vim.keymap.set({"n", "x"}, "<leader>y", '"+y')
 vim.keymap.set({"n", "x"}, "<leader>p", '"+p')
 
+-- remove search highlight
 vim.keymap.set("n", "<CR>", ":noh<CR><CR>")
