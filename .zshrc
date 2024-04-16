@@ -141,73 +141,73 @@ alias rmd="rm -r"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 function mcd() {
-    mkdir -p "$1" && cd "$1"
+  mkdir -p "$1" && cd "$1"
 }
 
 function up() {
-    ups=""
-    for i in $(seq 1 $1); do
-        ups=$ups"../"
-    done
-    cd $ups
+  ups=""
+  for i in $(seq 1 $1); do
+    ups=$ups"../"
+  done
+  cd $ups
 }
 
 function pod() {
-    cd $(find ~/PoD -type d -wholename "*$1")
+  cd $(find ~/PoD -type d -wholename "*$1")
 }
 
 function venv() {
-    VENVDIR=$HOME/.virtualenvs
+  VENVDIR=$HOME/.virtualenvs
 
-    usage() {
-        printf "Usage: venv [-a <name>] [-c <name>] [-d <name>] [-h] [-l]"
-        printf "\n\n"
-        printf "\t-a  activate virtual environment with the given <name>\n"
-        printf "\t-c  create a new virtual environment in"
-        printf " %s/<name>\n" $VENVDIR
-        printf "\t-d  delete the virtual environment in"
-        printf " %s/<name>\n" $VENVDIR
-        printf "\t-h  show this help message\n"
-        printf "\t-l  list all virtual environments in %s\n" $VENVDIR
-    }
+  usage() {
+    printf "Usage: venv [-a <name>] [-c <name>] [-d <name>] [-h] [-l]"
+    printf "\n\n"
+    printf "\t-a  activate virtual environment with the given <name>\n"
+    printf "\t-c  create a new virtual environment in"
+    printf " %s/<name>\n" $VENVDIR
+    printf "\t-d  delete the virtual environment in"
+    printf " %s/<name>\n" $VENVDIR
+    printf "\t-h  show this help message\n"
+    printf "\t-l  list all virtual environments in %s\n" $VENVDIR
+  }
 
-    if [[ $# = 0 ]]; then
-        echo "Error: no option provided"
+  if [[ $# = 0 ]]; then
+    echo "Error: no option provided"
+    usage >&2
+  fi
+
+  local OPTIND OPTARG
+
+  while getopts ":a:c:d:hl" OPT; do
+    case $OPT in
+      a)
+        source "$VENVDIR"/"$OPTARG"/bin/activate
+        ;;
+      c)
+        python -m venv "$VENVDIR"/"$OPTARG"
+        echo "Virtual environment '$OPTARG' created in $VENVDIR"
+        ;;
+      d)
+        rm -rf "$VENVDIR"/"$OPTARG"
+        echo "Virtual environment '$OPTARG' deleted from $VENVDIR"
+        ;;
+      h)
+        usage
+        ;;
+      l)
+        for ENV in $VENVDIR/*/ ; do
+            echo "Virtual environment '$(basename $ENV)'"
+            $ENV/bin/pip list
+            printf "\n"
+        done
+        ;;
+      \?)
+        echo "Invalid option: -$OPTARG"
         usage >&2
-    fi
-
-    local OPTIND OPTARG
-
-    while getopts ":a:c:d:hl" OPT; do
-        case $OPT in
-            a)
-                source "$VENVDIR"/"$OPTARG"/bin/activate
-                ;;
-            c)
-                python -m venv "$VENVDIR"/"$OPTARG"
-                echo "Virtual environment '$OPTARG' created in $VENVDIR"
-                ;;
-            d)
-                rm -rf "$VENVDIR"/"$OPTARG"
-                echo "Virtual environment '$OPTARG' deleted from $VENVDIR"
-                ;;
-            h)
-                usage
-                ;;
-            l)
-                for ENV in $VENVDIR/*/ ; do
-                    echo "Virtual environment '$(basename $ENV)'"
-                    $ENV/bin/pip list
-                    printf "\n"
-                done
-                ;;
-            \?)
-                echo "Invalid option: -$OPTARG"
-                usage >&2
-                ;;
-            :)
-                echo "Error: option -$OPTARG requires an argument" >&2
-                ;;
-        esac
-    done
+        ;;
+      :)
+        echo "Error: option -$OPTARG requires an argument" >&2
+        ;;
+    esac
+  done
 }
