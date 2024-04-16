@@ -196,9 +196,9 @@ function venv() {
         ;;
       l)
         for ENV in $VENVDIR/*/ ; do
-            echo "Virtual environment '$(basename $ENV)'"
-            $ENV/bin/pip list
-            printf "\n"
+          echo "Virtual environment '$(basename $ENV)'"
+          $ENV/bin/pip list
+          printf "\n"
         done
         ;;
       \?)
