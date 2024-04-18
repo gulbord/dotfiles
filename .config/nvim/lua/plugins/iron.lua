@@ -38,5 +38,10 @@ return {
     vim.keymap.set("n", "<localleader>rr", "<cmd>IronRestart<CR>")
     vim.keymap.set("n", "<localleader>rf", "<cmd>IronFocus<CR>")
     vim.keymap.set("n", "<localleader>rh", "<cmd>IronHide<CR>")
+    vim.keymap.set(
+      "v",
+      "<localleader>sv",
+      ":lua require('iron.core').visual_send()<CR><Esc>"
+    )
   end
 }
