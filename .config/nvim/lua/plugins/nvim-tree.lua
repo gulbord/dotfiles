@@ -9,5 +9,10 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     require("nvim-tree").setup()
+
+    -- open/focus nvim-tree view
+    vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
+    vim.keymap.set("n", "<leader>tf", ":NvimTreeFocus<CR>")
+    vim.keymap.set("n", "<leader>tg", ":NvimTreeFindFile<CR>")
   end
 }

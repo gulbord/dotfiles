@@ -14,19 +14,19 @@ return {
         repl_open_cmd = require("iron.view").split("40%"),
       },
       keymaps = {
-        send_motion = "<leader>sc",
-        visual_send = "<leader>sc",
-        send_file = "<leader>sf",
-        send_line = "<leader>sl",
-        send_until_cursor = "<leader>su",
-        send_mark = "<leader>sm",
-        mark_motion = "<leader>mc",
-        mark_visual = "<leader>mc",
-        remove_mark = "<leader>md",
-        cr = "<leader>s<CR>",
-        interrupt = "<leader>s<leader>",
-        exit = "<leader>sq",
-        clear = "<leader>cl",
+        send_motion = "<localleader>sc",
+        visual_send = "<localleader>sc",
+        send_file = "<localleader>sf",
+        send_line = "<localleader>sl",
+        send_until_cursor = "<localleader>su",
+        send_mark = "<localleader>sm",
+        mark_motion = "<localleader>mc",
+        mark_visual = "<localleader>mc",
+        remove_mark = "<localleader>md",
+        cr = "<localleader>s<CR>",
+        interrupt = "<localleader>s<leader>",
+        exit = "<localleader>sq",
+        clear = "<localleader>cl",
       },
       highlight = {
         italic = false
@@ -34,9 +34,9 @@ return {
       ignore_blank_lines = true,
     })
 
-    vim.keymap.set("n", "<leader>rs", "<cmd>IronRepl<CR>")
-    vim.keymap.set("n", "<leader>rr", "<cmd>IronRestart<CR>")
-    vim.keymap.set("n", "<leader>rf", "<cmd>IronFocus<CR>")
-    vim.keymap.set("n", "<leader>rh", "<cmd>IronHide<CR>")
+    vim.keymap.set("n", "<localleader>rs", "<cmd>IronRepl<CR>")
+    vim.keymap.set("n", "<localleader>rr", "<cmd>IronRestart<CR>")
+    vim.keymap.set("n", "<localleader>rf", "<cmd>IronFocus<CR>")
+    vim.keymap.set("n", "<localleader>rh", "<cmd>IronHide<CR>")
   end
 }
