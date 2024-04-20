@@ -10,9 +10,6 @@ export ZSH="/home/guglielmo/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 ZSH_THEME="eastwood"
-#ZSH_THEME="typewritten"
-#TYPEWRITTEN_SYMBOL="§"
-#TYPEWRITTEN_CURSOR="block"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -34,7 +31,7 @@ ZSH_THEME="eastwood"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=14
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -102,13 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias psudo='sudo env PATH="$PATH"'
-
-# Set typewritten ZSH as a prompt
-#
-
-#export TYPEWRITTEN_SYMBOL="$"
-#export TYPEWRITTEN_RELATIVE_PATH="adaptive"
-#
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
