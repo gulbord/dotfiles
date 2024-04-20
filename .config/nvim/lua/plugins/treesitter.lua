@@ -8,8 +8,8 @@ return {
       },
 
       ensure_installed = {
-        "c", "cpp", "latex", "lua", "python",
-        "query", "r", "vim", "vimdoc"
+        "c", "cpp", "latex", "lua", "markdown", "python",
+        "query", "r", "rnoweb", "vim", "vimdoc"
       },
 
       sync_install = false,
