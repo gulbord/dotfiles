@@ -15,4 +15,4 @@ vim.keymap.set({ "n", "x" }, "<leader>p", '"+p')
 vim.keymap.set("n", "<CR>", ":noh<CR><CR>")
 
 -- exit terminal
-vim.keymap.set("t", "<leader><ESC>", "<C-\\><C-n>", { noremap = true })
+vim.keymap.set("t", "<C-space>", "<C-\\><C-n>", { noremap = true })
