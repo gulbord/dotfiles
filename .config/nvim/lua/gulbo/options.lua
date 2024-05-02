@@ -19,6 +19,10 @@ vim.opt.termguicolors = true
 
 vim.g.python3_host_prog = "/usr/bin/python3"
 
+vim.g.pyindent_open_paren = "shiftwidth()"
+vim.g.pyindent_nested_paren = "shiftwidth()"
+vim.g.pyindent_contine = "shiftwidth()"
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "c,cpp",
   callback = function()
