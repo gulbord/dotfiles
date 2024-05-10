@@ -201,3 +201,6 @@ function venv() {
     esac
   done
 }
+
+# Starship prompt
+#eval "$(starship init zsh)"
