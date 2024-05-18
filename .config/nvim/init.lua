@@ -28,4 +28,4 @@ require("lazy").setup("plugins")
 -- COLORSCHEME --
 -----------------
 
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd.colorscheme("catppuccin")
