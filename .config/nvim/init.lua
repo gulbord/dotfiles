@@ -28,4 +28,5 @@ require("lazy").setup("plugins")
 -- COLORSCHEME --
 -----------------
 
-vim.cmd.colorscheme("catppuccin")
+vim.g.alabaster_dim_comments = true
+vim.cmd.colorscheme("alabaster")
