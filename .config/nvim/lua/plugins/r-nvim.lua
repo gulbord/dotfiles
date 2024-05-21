@@ -4,7 +4,8 @@ return {
   config = function()
     local opts = {
       R_args = {"--quiet", "--no-save"},
-      assign_map = "<C-,>",
+      assignment_keymap = "<C-,>",
+      pipe_keymap = "<C-;>",
       help_w = 40,
       auto_start = "no",
       open_html = "no",
