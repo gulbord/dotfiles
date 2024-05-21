@@ -1,3 +1,2 @@
-options(radian.color_scheme = "github-dark")
 options(radian.editing_mode = "vi")
 options(radian.tab_size = 2)
