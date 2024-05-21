@@ -24,7 +24,7 @@ vim.g.pyindent_nested_paren = "shiftwidth()"
 vim.g.pyindent_contine = "shiftwidth()"
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = {"*.c", "*.h", "*.cpp", "*.hpp"},
+  pattern = {"c,cpp"},
   callback = function()
     vim.opt_local.tabstop = 4
     vim.opt_local.cindent = true

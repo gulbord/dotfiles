@@ -28,5 +28,4 @@ require("lazy").setup("plugins")
 -- COLORSCHEME --
 -----------------
 
-vim.g.alabaster_dim_comments = true
-vim.cmd.colorscheme("alabaster")
+vim.cmd.colorscheme("github_dark_dimmed")
