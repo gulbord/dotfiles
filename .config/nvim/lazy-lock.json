@@ -2,7 +2,7 @@
   "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
   "R.nvim": { "branch": "main", "commit": "964075526267bf5768d14b6be83bea7a17ada56f" },
   "alabaster.nvim": { "branch": "main", "commit": "ff1a9e07718506e45b94b2088366c5a8ab1ee1ea" },
-  "github-nvim-theme": { "branch": "main", "commit": "d832925e77cef27b16011a8dfd8835f49bdcd055" },
+  "gruvbox-material": { "branch": "master", "commit": "848b4de6ab014d689d5c20790afebd7c32c1581b" },
   "iron.nvim": { "branch": "master", "commit": "c993d018d11829528b0fe91eb9ba412e453071ea" },
   "lazy.nvim": { "branch": "main", "commit": "9895337d1f4c0cea1186d92148e3d80f6551eda8" },
   "nvim-tree.lua": { "branch": "master", "commit": "2bc725a3ebc23f0172fb0ab4d1134b81bcc13812" },

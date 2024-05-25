@@ -9,9 +9,7 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     require("nvim-tree").setup({
-      git = {
-        ignore = false,
-      },
+      git = { ignore = true, },
     })
 
     -- open/focus nvim-tree view
