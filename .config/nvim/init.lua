@@ -28,4 +28,4 @@ require("lazy").setup("plugins")
 -- COLORSCHEME --
 -----------------
 
-vim.cmd.colorscheme("alabaster")
+vim.cmd.colorscheme("gruvbox-material")
