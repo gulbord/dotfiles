@@ -207,3 +207,7 @@ function venv() {
 
 # Starship prompt
 #eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias fcc="$HOME/tmp/rust-book/fahrenheit/target/release/fahrenheit"
