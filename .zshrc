@@ -210,4 +210,4 @@ function venv() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-alias fcc="$HOME/tmp/rust-book/fahrenheit/target/release/fahrenheit"
+alias fcc="$HOME/dev/rust-book/fahrenheit/target/release/fahrenheit"
