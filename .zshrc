@@ -205,6 +205,17 @@ function venv() {
   done
 }
 
+function earbuds() {
+  if [ "$1" = "off" ]; then
+    bluetoothctl disconnect > /dev/null
+    return
+  fi
+
+  rfkill unblock bluetooth
+  bluetoothctl power on > /dev/null
+  bluetoothctl connect "3C:AB:3E:34:55:68" > /dev/null
+}
+
 # Starship prompt
 #eval "$(starship init zsh)"
 
