@@ -206,14 +206,23 @@ function venv() {
 }
 
 function earbuds() {
+  mac="3C:AB:3E:34:55:68"
+
   if [ "$1" = "off" ]; then
-    bluetoothctl disconnect > /dev/null
+    bluetoothctl disconnect &> /dev/null
+    echo "Earbuds ($mac) disconnected."
     return
   fi
 
   rfkill unblock bluetooth
-  bluetoothctl power on > /dev/null
-  bluetoothctl connect "3C:AB:3E:34:55:68" > /dev/null
+  bluetoothctl power on &> /dev/null
+  bluetoothctl connect $mac &> /dev/null
+
+  if [ $? -eq 0 ]; then
+    echo "Succesfully connected to earbuds ($mac)."
+  else
+    echo "Failed to connect to earbuds ($mac). Please try again."
+  fi
 }
 
 # Starship prompt
