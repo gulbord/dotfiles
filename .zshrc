@@ -51,7 +51,7 @@ export UPDATE_ZSH_DAYS=14
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -117,9 +117,6 @@ export CPATH="$HOME/clibs:$CPATH"
 export PATH="$PATH:$HOME/neovim/bin"
 
 export PATH="$PATH:$HOME/scid/bin"
-
-export WINEPREFIX="$HOME/.win32"
-export WINEARCH=win32
 
 #fpath=(~/.zshfuncs "${fpath[@]}")
 #autoload -Uz $fpath[1]/*(.:t)
@@ -210,12 +207,14 @@ function earbuds() {
 
   if [ "$1" = "off" ]; then
     bluetoothctl disconnect &> /dev/null
+    rfkill block bluetooth
     echo "Earbuds ($mac) disconnected."
     return
   fi
 
   rfkill unblock bluetooth
   bluetoothctl power on &> /dev/null
+  sleep 3
   bluetoothctl connect $mac &> /dev/null
 
   if [ $? -eq 0 ]; then
