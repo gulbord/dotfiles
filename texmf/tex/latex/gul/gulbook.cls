@@ -354,7 +354,7 @@
     \ifnum \c@tocdepth >\m@ne
         \addpenalty{-\@highpenalty}%
         \vskip\medskipamount
-        \setlength\@tempdima{1.2em}%
+        \setlength\@tempdima{1.5em}%
         \begingroup
             \parindent\z@ \rightskip\@pnumwidth
             \parfillskip -\@pnumwidth
@@ -370,36 +370,8 @@
         \endgroup
 	\fi}
 
-\newcommand*\l@section{\@dottedtocline{1}{1.2em}{1.7em}}
-\newcommand*\l@subsection{\@dottedtocline{2}{2.9em}{3.4em}}
-
-%\newcommand*\l@section[2]{%
-%    \ifnum \c@tocdepth >\z@
-%        \addpenalty\@secpenalty
-%        \setlength\@tempdima{1.7em}%
-%        \begingroup
-%            \parindent\z@ \rightskip\@pnumwidth
-%            \parfillskip -\@pnumwidth
-%            \leavevmode
-%            \advance\leftskip\@tempdima
-%            \hskip -0.5em
-%            #1\nobreak\hspace{1.2em}#2\kern-\p@\kern\p@\par
-%        \endgroup
-%    \fi}
-%
-%\newcommand*\l@subsection[2]{%
-%    \ifnum \c@tocdepth >\@ne
-%        \addpenalty\@secpenalty
-%        \setlength\@tempdima{2.2em}%
-%        \begingroup
-%            \parindent\z@ \rightskip\@pnumwidth
-%            \parfillskip -\@pnumwidth
-%            \leavevmode
-%            \advance\leftskip3.4em
-%            \hskip -0.5em
-%            #1\nobreak\hspace{1.2em}#2\kern-\p@\kern\p@\par
-%        \endgroup
-%    \fi}
+\newcommand*{\l@section}{\@dottedtocline{1}{1.5em}{2.1em}}
+\newcommand*{\l@subsection}{\@dottedtocline{2}{3.6em}{2.8em}}
 
 \newdimen\bibindent
 \setlength\bibindent{1.2em}
