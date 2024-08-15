@@ -26,6 +26,11 @@ return {
     { trig = "tt" },
     fmta([[\texttt{<>}]], d(1, get_visual))
   ),
+  -- ABBREVIATION
+  s(
+    { trig = "ab" },
+    fmta([[\abbr{<>}]], d(1, get_visual))
+  ),
   -- MATH ROMAN
   s(
     {
