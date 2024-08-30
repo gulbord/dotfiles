@@ -24,7 +24,7 @@ vim.g.pyindent_nested_paren = "shiftwidth()"
 vim.g.pyindent_contine = "shiftwidth()"
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = {"c,cpp"},
+  pattern = "c,cpp",
   callback = function()
     vim.opt_local.tabstop = 4
     vim.opt_local.cindent = true
@@ -36,6 +36,14 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   callback = function()
     vim.cmd("silent !isort --profile black %")
     vim.cmd("silent !black -l80 --quiet %")
+    vim.cmd("edit")
+  end
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*.h,*.hpp,*.c,*.cpp",
+  callback = function()
+    vim.cmd("silent !clang-format -i %")
     vim.cmd("edit")
   end
 })
