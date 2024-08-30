@@ -64,7 +64,7 @@ return {
       wordTrig = false,
       snippetType = "autosnippet"
     },
-    fmta([[<>^{<>}_{<>}]], { f(capture_one), i(1), i(2) }),
+    fmta([[<>_{<>}^{<>}]], { f(capture_one), i(1), i(2) }),
     { condition = tsutils.in_mathzone }
   ),
   -- MATHRM SUBSCRIPT
@@ -272,7 +272,7 @@ return {
   -- INTEGRAL from negative to positive infinity
   s(
     {
-      trig = "([^%a])intt",
+      trig = "([^%a])intf",
       regTrig = true,
       wordTrig = false,
       snippetType = "autosnippet"
