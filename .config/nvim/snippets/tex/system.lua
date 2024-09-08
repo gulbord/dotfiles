@@ -27,12 +27,7 @@ return {
   -- REFERENCE
   s(
     { trig = "(.)rr", regTrig = true, wordTrig = false },
-    fmta([[<>~\ref{<>}]], { f(capture_one), d(1, get_visual) })
-  ),
-  -- EQUATION REFERENCE
-  s(
-    { trig = "(.)er", regTrig = true, wordTrig = false },
-    fmta([[<>~\eqref{<>}]], { f(capture_one), d(1, get_visual) })
+    fmta([[<>\cref{<>}]], { f(capture_one), d(1, get_visual) })
   ),
   -- LABEL
   s(

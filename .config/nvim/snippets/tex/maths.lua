@@ -94,16 +94,16 @@ return {
   -- SUBSCRIPT SHORTCUT
   -- places the first alphanumeric character after the trigger into a
   -- subscript
-  --s(
-  --  {
-  --    trig = '([%w%)%]%}]):([%w])',
-  --    regTrig = true,
-  --    wordTrig = false,
-  --    snippetType = "autosnippet"
-  --  },
-  --  fmta([[<>_{<>}]], { f(capture_one), f(capture_two) }),
-  --  { condition = tsutils.in_mathzone }
-  --),
+  s(
+    {
+      trig = '([%w%)%]%}]):([%w])',
+      regTrig = true,
+      wordTrig = false,
+      snippetType = "autosnippet"
+    },
+    fmta([[<>_{<>}]], { f(capture_one), f(capture_two) }),
+    { condition = tsutils.in_mathzone }
+  ),
   -- EULER'S NUMBER SUPERSCRIPT
   s(
     {
