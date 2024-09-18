@@ -192,6 +192,23 @@ return {
     fmta([[<>\sqrt{<>}]], { f(capture_one), d(1, get_visual) }),
     { condition = tsutils.in_mathzone }
   ),
+  -- EXPECTED VALUE
+  s(
+    {
+      trig = "([^%a])xv",
+      regTrig = true,
+      wordTrig = false,
+      snippetType = "autosnippet"
+    },
+    fmta([[<>\expval{<>}]], { f(capture_one), d(1, get_visual) }),
+    { condition = tsutils.in_mathzone }
+  ),
+  -- BAR
+  s(
+    { trig = "bar" },
+    fmta([[\bar{<>}]], { d(1, get_visual) }),
+    { condition = tsutils.in_mathzone }
+  ),
   -- DERIVATIVE
   s(
     {
