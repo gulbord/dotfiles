@@ -209,6 +209,12 @@ return {
     fmta([[\bar{<>}]], { d(1, get_visual) }),
     { condition = tsutils.in_mathzone }
   ),
+  -- HAT
+  s(
+    { trig = "hat" },
+    fmta([[\hat{<>}]], { d(1, get_visual) }),
+    { condition = tsutils.in_mathzone }
+  ),
   -- DERIVATIVE
   s(
     {
