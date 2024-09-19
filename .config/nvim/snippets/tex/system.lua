@@ -46,6 +46,11 @@ return {
     { trig = "nc" },
     fmta([[\newcommand{<>}{<>}]], { i(1), i(2) })
   ),
+  -- NUMBER (siunitx)
+  s(
+    { trig = "num" },
+    fmta([[\num{<>}]], { d(1, get_visual) })
+  ),
   -- QUANTITY (siunitx)
   s(
     {
