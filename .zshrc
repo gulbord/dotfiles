@@ -142,6 +142,10 @@ function up() {
   cd $ups
 }
 
+function evs() {
+  evince "$1" &>/dev/null &
+}
+
 function pod() {
   cd $(find ~/PoD -type d -wholename "*$1")
 }
