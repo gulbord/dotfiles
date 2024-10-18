@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias psudo='sudo env PATH="$PATH"'
+alias R="R --no-save --quiet"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
@@ -150,9 +151,9 @@ function pod() {
   cd $(find ~/PoD -type d -wholename "*$1")
 }
 
-function venv() {
-  VENVDIR=$HOME/.virtualenvs
+export VENVDIR=$HOME/.virtualenvs
 
+function venv() {
   usage() {
     printf "Usage: venv [-a <name>] [-c <name>] [-d <name>] [-h] [-l]"
     printf "\n\n"
