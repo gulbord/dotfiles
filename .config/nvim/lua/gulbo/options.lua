@@ -34,8 +34,8 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*.py",
   callback = function()
-    vim.cmd("silent !isort --profile black %")
-    vim.cmd("silent !black -l80 --quiet %")
+    vim.cmd("silent !ruff check --select I --fix %")
+    vim.cmd("silent !ruff format --config line-length=80 --quiet %")
     vim.cmd("edit")
   end
 })
