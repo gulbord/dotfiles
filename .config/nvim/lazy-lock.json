@@ -1,16 +1,17 @@
 {
   "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
-  "R.nvim": { "branch": "main", "commit": "d58d5d854a6198c53154bbc7cc34c6a83bc83260" },
-  "gruvbox-material": { "branch": "master", "commit": "559b4a9abb6781699404dfd98fb7d6ec83113337" },
-  "hardtime.nvim": { "branch": "main", "commit": "6513bf42cd9261669d1ee41ff8b4065dfdc53a09" },
+  "R.nvim": { "branch": "main", "commit": "f976000014c6199bc7ce9ca876441cd4479e1262" },
+  "everforest": { "branch": "master", "commit": "0f6a0abebc98729ea0b45927151d47e2d4ce517c" },
+  "hardtime.nvim": { "branch": "main", "commit": "027d6f991927a71bd510a7673ae5bb404ca2a1c7" },
   "iron.nvim": { "branch": "master", "commit": "e6b78ec1bc56eab63b3a9112d348b3d79836b672" },
-  "lazy.nvim": { "branch": "main", "commit": "460e1cd8f24e364d54543a4b0e83f6f4ec1f65fb" },
+  "lazy.nvim": { "branch": "main", "commit": "cf8ecc2c5e4332760431a33534240b0cbc6680ab" },
   "nui.nvim": { "branch": "main", "commit": "b58e2bfda5cea347c9d58b7f11cf3012c7b3953f" },
-  "nvim-tree.lua": { "branch": "master", "commit": "d41b4ca013ed89e41b9c0ecbdae5f1633e42f7fa" },
-  "nvim-treesitter": { "branch": "master", "commit": "3c6af36794b26e1bcac3f126b43e0f646154725d" },
-  "nvim-web-devicons": { "branch": "master", "commit": "9154484705968658e9aab2b894d1b2a64bf9f83d" },
+  "nvim-tree.lua": { "branch": "master", "commit": "4a9e82d10a3715d0c3845e1d2f66ddfb8b711253" },
+  "nvim-treesitter": { "branch": "master", "commit": "b065b59196edb10a7c29bfbed88cc225b7e3de37" },
+  "nvim-web-devicons": { "branch": "master", "commit": "19d257cf889f79f4022163c3fbb5e08639077bd8" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "stan-vim": { "branch": "master", "commit": "d14f7f5f96e802c48bd2b6e087cf7956054d9f38" },
-  "telescope.nvim": { "branch": "master", "commit": "0df05c9e9f791dbc542c1fb612195f4dc97209b6" },
-  "vimtex": { "branch": "master", "commit": "539a203f19531c6b9d2d1b093ee8911fb7050bbc" }
+  "telescope.nvim": { "branch": "master", "commit": "85922dde3767e01d42a08e750a773effbffaea3e" },
+  "vimtex": { "branch": "master", "commit": "0785fd98af20f308ce6856f75a70a4ece9abab29" },
+  "zenbones.nvim": { "branch": "main", "commit": "88960c8aa3ad8aff0bcccdce7cd23629c7a3c510" }
 }

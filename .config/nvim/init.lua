@@ -33,4 +33,4 @@ require("lazy").setup(
 -- COLORSCHEME --
 -----------------
 
-vim.cmd.colorscheme("gruvbox-material")
+vim.cmd.colorscheme("everforest")
