@@ -4,6 +4,7 @@
 
 require("gulbo.mappings")
 require("gulbo.options")
+require("gulbo.autocmds")
 
 ----------------
 -- LAZY SETUP --
@@ -28,6 +29,17 @@ require("lazy").setup(
     defaults = { lazy = false },
   }
 )
+
+local lspconfig = require("lspconfig")
+lspconfig.typst_lsp.setup({})
+lspconfig.tinymist.setup({
+  single_file_support = true,
+  settings = {
+    exportPdf = "onType",
+    formatterMode = "typstyle",
+    formatterPrintWidth = 80,
+  },
+})
 
 -----------------
 -- COLORSCHEME --
