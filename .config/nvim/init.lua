@@ -31,7 +31,6 @@ require("lazy").setup(
 )
 
 local lspconfig = require("lspconfig")
-lspconfig.typst_lsp.setup({})
 lspconfig.tinymist.setup({
   single_file_support = true,
   settings = {
