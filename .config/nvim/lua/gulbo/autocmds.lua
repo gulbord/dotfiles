@@ -45,3 +45,18 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     vim.cmd("edit")
   end
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "haskell",
+  callback = function()
+    vim.opt_local.tabstop = 4
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*.hs",
+  callback = function()
+    vim.cmd("silent !fourmolu -i %")
+    vim.cmd("edit")
+  end
+})
