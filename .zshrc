@@ -235,3 +235,5 @@ function earbuds() {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias fcc="$HOME/dev/rust-book/fahrenheit/target/release/fahrenheit"
+
+[ -f "/home/guglielmo/.ghcup/env" ] && . "/home/guglielmo/.ghcup/env" # ghcup-env
