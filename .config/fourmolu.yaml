@@ -13,7 +13,7 @@ function-arrows: trailing
 comma-style: leading
 
 # Styling of import/export lists (choices: leading, trailing, or diff-friendly)
-import-export-style: diff-friendly
+import-export-style: leading
 
 # Whether to full-indent or half-indent 'where' bindings past the preceding body
 indent-wheres: false
@@ -50,7 +50,7 @@ single-deriving-parens: always
 unicode: never
 
 # Give the programmer more choice on where to insert blank lines
-respectful: true
+respectful: false
 
 # Fixity information for operators
 fixities: []
