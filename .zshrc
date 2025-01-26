@@ -245,3 +245,5 @@ alias fcc="$HOME/dev/rust-book/fahrenheit/target/release/fahrenheit"
 # This section can be safely removed at any time if needed.
 [[ ! -r '/home/guglielmo/.opam/opam-init/init.zsh' ]] || source '/home/guglielmo/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+
+export ZK_NOTEBOOK_DIR="/home/guglielmo/notes"
