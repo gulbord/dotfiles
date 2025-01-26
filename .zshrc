@@ -131,6 +131,8 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias con="kitten ssh"
 alias show="kitten icat"
 
+alias tnv='NVIM_APPNAME="tinynvim" nvim'
+
 function mcd() {
   mkdir -p "$1" && cd "$1"
 }
