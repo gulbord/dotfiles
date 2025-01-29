@@ -115,8 +115,6 @@ export PATH="$PATH:$JAGS_HOME/bin"
 export LD_LIBRARY_PATH="$JAGS_HOME/lib:$LD_LIBRARY_PATH"
 export CPATH="$HOME/clibs:$CPATH"
 
-export PATH="$PATH:$HOME/neovim/bin"
-
 export PATH="$PATH:$HOME/scid/bin"
 
 #fpath=(~/.zshfuncs "${fpath[@]}")
@@ -248,4 +246,6 @@ alias fcc="$HOME/dev/rust-book/fahrenheit/target/release/fahrenheit"
 [[ ! -r '/home/guglielmo/.opam/opam-init/init.zsh' ]] || source '/home/guglielmo/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
 
-export ZK_NOTEBOOK_DIR="/home/guglielmo/notes"
+export ZK_NOTEBOOK_DIR="$HOME/notes"
+
+export LEDGER_FILE="$HOME/finances/my.journal"
