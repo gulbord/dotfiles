@@ -7,10 +7,10 @@ set.mouse = "a"
 set.ignorecase = true
 set.smartcase = true
 
-set.textwidth = 80
 set.splitbelow = true
 set.cursorline = true
 
+set.textwidth = 80
 set.expandtab = true
 set.tabstop = 2
 set.softtabstop = -1
