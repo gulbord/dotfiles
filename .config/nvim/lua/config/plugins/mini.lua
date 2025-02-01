@@ -1,7 +1,9 @@
 return {
   "echasnovski/mini.nvim",
-  version = "*",
+  version = false,
   config = function()
+    require("config.plugins.mini.files").setup()
+
     require("mini.icons").setup({ style = "glyph" })
 
     require("mini.statusline").setup({ use_icons = true })

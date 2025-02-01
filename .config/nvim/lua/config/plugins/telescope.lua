@@ -30,6 +30,6 @@ return {
     end)
 
     -- Custom pickers
-    require("config.telescope.multigrep").setup()
+    require("config.plugins.telescope.multigrep").setup()
   end,
 }
