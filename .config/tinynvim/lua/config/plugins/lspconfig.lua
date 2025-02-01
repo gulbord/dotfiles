@@ -15,24 +15,19 @@ return {
   },
   config = function()
     local lspconfig = require("lspconfig")
+    -- Lua
     lspconfig.lua_ls.setup({ settings = { lineLength = 80 } })
-
-    -- Actions on LSPs start
-    vim.api.nvim_create_autocmd("LspAttach", {
-      callback = function(args)
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
-        if not client then return end
-
-        if client.supports_method("textDocument/formatting") then
-          -- Format the current buffer on save
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = args.buf, -- Only inside the current buffer
-            callback = function()
-              vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-            end,
-          })
-        end
-      end,
+    -- OCaml
+    lspconfig.ocamllsp.setup({
+      cmd = { "ocamllsp" },
+      filetypes = {
+        "ocaml",
+        "ocaml.menhir",
+        "ocaml.interface",
+        "ocaml.ocamllex",
+        "reason",
+        "dune",
+      },
     })
   end,
 }
