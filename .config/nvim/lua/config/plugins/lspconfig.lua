@@ -1,33 +1,45 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "folke/lazydev.nvim",
-    ft = "lua", -- only load on lua files
-    opts = {
-      library = {
-        {
-          -- Load luvit types when the `vim.uv` word is found
-          path = "${3rd}/luv/library",
-          words = { "vim%.uv" },
+    "saghen/blink.cmp",
+    {
+      "folke/lazydev.nvim",
+      ft = "lua", -- only load on lua files
+      opts = {
+        library = {
+          {
+            -- Load luvit types when the `vim.uv` word is found
+            path = "${3rd}/luv/library",
+            words = { "vim%.uv" },
+          },
         },
       },
     },
   },
-  config = function()
-    local lspconfig = require("lspconfig")
-    -- Lua
-    lspconfig.lua_ls.setup({ settings = { lineLength = 80 } })
-    -- OCaml
-    lspconfig.ocamllsp.setup({
-      cmd = { "ocamllsp" },
-      filetypes = {
-        "ocaml",
-        "ocaml.menhir",
-        "ocaml.interface",
-        "ocaml.ocamllex",
-        "reason",
-        "dune",
+  opts = {
+    servers = {
+      lua_ls = {
+        settings = { lineLength = 80 },
       },
-    })
+      ocamllsp = {
+        cmd = { "ocamllsp" },
+        filetypes = {
+          "ocaml",
+          "ocaml.menhir",
+          "ocaml.interface",
+          "ocaml.ocamllex",
+          "reason",
+          "dune",
+        },
+      },
+    },
+  },
+  config = function(_, opts)
+    local lspconfig = require("lspconfig")
+    local blink_cmp = require("blink.cmp")
+    for server, config in pairs(opts.servers) do
+      config.capabilities = blink_cmp.get_lsp_capabilities(config.capabilities)
+      lspconfig[server].setup(config)
+    end
   end,
 }

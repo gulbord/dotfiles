@@ -23,11 +23,33 @@ return {
 
     telescope.load_extension("fzf")
 
-    vim.keymap.set("n", "<leader>fh", builtin.help_tags)
-    vim.keymap.set("n", "<leader>fd", builtin.find_files)
-    vim.keymap.set("n", "<leader>en", function()
+    vim.keymap.set(
+      "n",
+      "<leader>fh",
+      builtin.help_tags,
+      { desc = "Search help pages" }
+    )
+    vim.keymap.set(
+      "n",
+      "<leader>fd",
+      builtin.find_files,
+      { desc = "Search files from cwd" }
+    )
+    vim.keymap.set("n", "<leader>fc", function()
       builtin.find_files({ cwd = vim.fn.stdpath("config") })
-    end)
+    end, { desc = "Search files under .config/nvim" })
+    vim.keymap.set(
+      "n",
+      "<leader>fb",
+      builtin.buffers,
+      { desc = "Search buffers" }
+    )
+    vim.keymap.set(
+      "n",
+      "<leader>fr",
+      builtin.git_files,
+      { desc = "Search git repo" }
+    )
 
     -- Custom pickers
     require("config.plugins.telescope.multigrep").setup()

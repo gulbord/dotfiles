@@ -52,10 +52,27 @@ local yank_path = function()
   vim.fn.setreg(vim.v.register, path)
 end
 
+local map_split = function(buf_id, lhs, direction)
+  local rhs = function()
+    -- Make new window and set it as target
+    local cur_target = files.get_explorer_state().target_window
+    local new_target = vim.api.nvim_win_call(cur_target, function()
+      vim.cmd(direction .. " split")
+      return vim.api.nvim_get_current_win()
+    end)
+    files.set_target_window(new_target)
+  end
+
+  local desc = "Split " .. direction
+  vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = desc })
+end
+
 vim.api.nvim_create_autocmd("User", {
   pattern = "MiniFilesBufferCreate",
   callback = function(args)
     local buf = args.data.buf_id
+    map_split(buf, "<C-x>", "belowright horizontal")
+    map_split(buf, "<C-v>", "belowright vertical")
     vim.keymap.set(
       "n",
       "g.",
@@ -68,7 +85,12 @@ vim.api.nvim_create_autocmd("User", {
       files.close,
       { buffer = buf, desc = "Close MiniFiles" }
     )
-    vim.keymap.set("n", "o", gio_open, { buffer = buf, desc = "Open with gio" })
+    vim.keymap.set(
+      "n",
+      "go",
+      gio_open,
+      { buffer = buf, desc = "Open with gio" }
+    )
     vim.keymap.set("n", "g~", set_cwd, { buffer = buf, desc = "Set cwd" })
     vim.keymap.set("n", "gy", yank_path, { buffer = buf, desc = "Yank path" })
   end,
