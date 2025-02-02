@@ -32,6 +32,8 @@ return {
           "dune",
         },
       },
+      basedpyright = {},
+      r_language_server = {},
     },
   },
   config = function(_, opts)

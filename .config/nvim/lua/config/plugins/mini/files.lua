@@ -97,7 +97,11 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 M.setup = function()
-  vim.keymap.set("n", "-", files.open, { desc = "Open MiniFiles" })
+  vim.keymap.set("n", "-", function()
+    local buf_name = vim.fn.expand("%")
+    local _ = files.close() or files.open(buf_name, false)
+    files.reveal_cwd()
+  end, { desc = "Open Mini Files" })
 end
 
 return M

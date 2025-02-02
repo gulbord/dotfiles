@@ -21,13 +21,6 @@ return {
     },
     sources = {
       default = { "lsp", "path", "snippets", "buffer" },
-      cmdline = function()
-        local type = vim.fn.getcmdtype()
-        if type == "/" or type == "?" then
-          return { "buffer" }
-        end
-        return {}
-      end,
     },
     signature = {
       enabled = true,

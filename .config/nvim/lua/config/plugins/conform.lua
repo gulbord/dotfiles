@@ -11,13 +11,13 @@ return {
       haskell = { "fourmolu" },
       lua = { "stylua" },
       ocaml = { "ocamlformat" },
-      python = { "ruff" },
+      python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
       rust = { "rustfmt" },
     },
     default_format_opts = { lsp_format = "fallback" },
     format_on_save = { timeout_ms = 500 },
     formatters = {
-      ruff = { prepend_args = { "--config", "line-length=80" } },
+      ruff = { prepend_args = { "config", "--line-length=80" } },
     },
   },
 }
