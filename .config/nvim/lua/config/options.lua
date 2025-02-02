@@ -17,3 +17,5 @@ set.softtabstop = -1
 set.shiftwidth = 0
 
 set.termguicolors = true
+
+set.foldenable = false
