@@ -236,8 +236,6 @@ function earbuds() {
 
 alias fcc="$HOME/dev/rust-book/fahrenheit/target/release/fahrenheit"
 
-[ -f "/home/guglielmo/.ghcup/env" ] && . "/home/guglielmo/.ghcup/env" # ghcup-env
-
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
 #   - the correct directories to the PATH

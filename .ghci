@@ -1,4 +1,0 @@
-:set prompt "\x03BB> "
-:set prompt-cont " | "
-
-:def hoogle \x -> return $ ":!hoogle " ++ x
