@@ -124,7 +124,7 @@ export PATH="$PATH:$HOME/scid/bin"
 alias workon="venv -a"
 alias nv="nvim"
 alias rmd="rm -r"
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dof="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 alias con="kitten ssh"
 alias show="kitten icat"
