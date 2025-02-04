@@ -83,3 +83,11 @@ vim.keymap.set("n", "<leader>st", function()
   vim.cmd.wincmd("J")
   vim.api.nvim_win_set_height(0, 10)
 end, { desc = "Open a small bottom terminal" })
+
+-- Easier exit for terminal mode
+vim.keymap.set(
+  "t",
+  "<localleader><esc>",
+  "<C-\\><C-n>",
+  { desc = "Exit terminal" }
+)
