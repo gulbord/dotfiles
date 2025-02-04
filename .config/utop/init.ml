@@ -1,1 +1,1 @@
-#utop_prompt_dummy;;
+#utop_prompt_dummy
