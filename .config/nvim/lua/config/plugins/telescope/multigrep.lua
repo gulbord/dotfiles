@@ -7,7 +7,16 @@ local M = {}
 
 local live_multigrep = function(opts)
   opts = opts or {}
-  opts.cwd = opts.cwd or vim.uv.cwd()
+  if not opts.cwd then
+    vim.fn.system("git rev-parse --is-inside-work-tree")
+    if vim.v.shell_error == 0 then
+      opts.cwd =
+        string.gsub(vim.fn.system("git rev-parse --show-toplevel"), "\n", "")
+    else
+      opts.cwd = vim.uv.cwd()
+    end
+  end
+  print(opts.cwd)
 
   local finder = finders.new_async_job({
     command_generator = function(prompt)
