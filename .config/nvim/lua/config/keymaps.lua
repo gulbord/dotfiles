@@ -85,9 +85,4 @@ vim.keymap.set("n", "<leader>st", function()
 end, { desc = "Open a small bottom terminal" })
 
 -- Easier exit for terminal mode
-vim.keymap.set(
-  "t",
-  "<localleader><esc>",
-  "<C-\\><C-n>",
-  { desc = "Exit terminal" }
-)
+vim.keymap.set("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal" })
