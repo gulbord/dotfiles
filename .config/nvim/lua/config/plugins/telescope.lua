@@ -29,21 +29,22 @@ return {
       builtin.help_tags,
       { desc = "Search help pages" }
     )
-    vim.keymap.set(
-      "n",
-      "<leader>fd",
-      builtin.find_files,
-      { desc = "Search files from cwd" }
-    )
+
+    vim.keymap.set("n", "<leader>fd", function()
+      builtin.find_files({ cwd = vim.fn.expand("%:p:h") })
+    end, { desc = "Search files from cwd" })
+
     vim.keymap.set("n", "<leader>fc", function()
       builtin.find_files({ cwd = vim.fn.stdpath("config") })
     end, { desc = "Search files under .config/nvim" })
+
     vim.keymap.set(
       "n",
       "<leader>fb",
       builtin.buffers,
       { desc = "Search buffers" }
     )
+
     vim.keymap.set(
       "n",
       "<leader>fr",

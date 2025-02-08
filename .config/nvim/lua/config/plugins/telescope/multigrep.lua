@@ -7,6 +7,8 @@ local M = {}
 
 local live_multigrep = function(opts)
   opts = opts or {}
+
+  -- If opts.cwd is not set, set it to git root or active buffer's directory
   if not opts.cwd then
     vim.fn.system("git rev-parse --is-inside-work-tree")
     if vim.v.shell_error == 0 then
@@ -16,7 +18,6 @@ local live_multigrep = function(opts)
       opts.cwd = vim.uv.cwd()
     end
   end
-  print(opts.cwd)
 
   local finder = finders.new_async_job({
     command_generator = function(prompt)
