@@ -61,6 +61,7 @@ local map_split = function(buf_id, lhs, direction)
       return vim.api.nvim_get_current_win()
     end)
     files.set_target_window(new_target)
+    files.go_in()
   end
 
   local desc = "Split " .. direction
