@@ -5,14 +5,19 @@ return {
     require("nvim-treesitter.configs").setup({
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = {"markdown"},
+        additional_vim_regex_highlighting = { "markdown" },
       },
       ensure_installed = {
-        --"c", "cpp", "latex", "lua", "markdown", "python",
-        --"query", "r", "rnoweb", "vim", "vimdoc"
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "query",
+        "markdown",
+        "markdown_inline",
       },
       sync_install = false,
-      auto_install = true,
+      auto_install = false,
     })
-  end
+  end,
 }
