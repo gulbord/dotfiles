@@ -50,6 +50,14 @@ vim.keymap.set(
   { desc = "Move to previous quickfix" }
 )
 
+-- LSP diagnostics
+vim.keymap.set(
+  "n",
+  "<leader>e",
+  vim.diagnostic.open_float,
+  { desc = "Open diagnostic float" }
+)
+
 -- LSP references
 vim.keymap.set(
   "n",
