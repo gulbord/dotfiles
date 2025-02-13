@@ -13,6 +13,7 @@ return {
       ocaml = { "ocamlformat" },
       python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
       rust = { "rustfmt" },
+      sh = { "shfmt" },
     },
     default_format_opts = { lsp_format = "fallback" },
     format_on_save = { timeout_ms = 500 },
