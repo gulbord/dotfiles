@@ -1,6 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     "saghen/blink.cmp",
     {
       "folke/lazydev.nvim",
@@ -37,6 +39,10 @@ return {
     },
   },
   config = function(_, opts)
+    -- Handle mason first
+    require("mason").setup()
+    require("mason-lspconfig").setup()
+
     local lspconfig = require("lspconfig")
     local blink_cmp = require("blink.cmp")
     for server, config in pairs(opts.servers) do
