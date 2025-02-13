@@ -10,13 +10,13 @@ return {
 
     require("mini.surround").setup({
       mappings = {
-        add = "sa",
-        delete = "sd",
-        find = "sf",
-        find_left = "sF",
-        highlight = "sh",
-        replace = "sr",
-        update_n_lines = "sn",
+        add = "<leader>sa",
+        delete = "<leader>sd",
+        find = "<leader>sf",
+        find_left = "<leader>sF",
+        highlight = "<leader>sh",
+        replace = "<leader>sr",
+        update_n_lines = "<leader>sn",
         suffix_last = "l", -- Suffix to search with "prev" method
         suffix_next = "n", -- Suffix to search with "next" method
       },
