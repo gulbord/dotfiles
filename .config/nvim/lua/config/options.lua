@@ -23,18 +23,14 @@ set.foldenable = false
 
 -- Diagnostics configuration
 set.signcolumn = "number"
+
 vim.diagnostic.config({
-  update_in_insert = false,
   virtual_text = false,
   signs = true,
-  float = {
-    format = function(dgn)
-      return string.format(
-        "%s (%s) [%s]",
-        dgn.message,
-        dgn.source,
-        dgn.code or dgn.user_data.lsp.code
-      )
-    end,
-  },
 })
+
+local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end

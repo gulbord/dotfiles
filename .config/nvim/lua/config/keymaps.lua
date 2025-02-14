@@ -19,8 +19,8 @@ vim.keymap.set(
 -- Remove search highlight
 vim.keymap.set(
   "n",
-  "<C-c>",
-  ":noh<CR>",
+  "<CR>",
+  ":nohlsearch<CR><CR>",
   { noremap = true, silent = true, nowait = true }
 )
 
