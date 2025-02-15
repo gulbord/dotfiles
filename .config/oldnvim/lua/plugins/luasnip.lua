@@ -15,7 +15,7 @@ return {
     local rep = require("luasnip.extras").rep
     local conds = require("luasnip.extras.expand_conditions")
 
-    vim.cmd[[
+    vim.cmd([[
     " use tab to expand and jump through snippets
     imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ?
       \ '<Plug>luasnip-expand-or-jump' : '<Tab>' 
@@ -33,7 +33,7 @@ return {
       \ '<Plug>luasnip-next-choice' : '<C-f>'
     smap <silent><expr> <C-f> luasnip#choice_active() ?
       \ '<Plug>luasnip-next-choice' : '<C-f>'
-    ]]
+    ]])
 
     ls.setup({
       -- enable autotriggered snippets
@@ -45,7 +45,7 @@ return {
     })
 
     function get_visual(args, parent)
-      if (#parent.snippet.env.LS_SELECT_RAW > 0) then
+      if #parent.snippet.env.LS_SELECT_RAW > 0 then
         return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
       else
         return sn(nil, i(1, ""))
@@ -61,7 +61,7 @@ return {
     end
 
     require("luasnip.loaders.from_lua").lazy_load({
-      paths = "~/.config/nvim/snippets"
+      path = "~/.config/oldnvim/snippets",
     })
-  end
+  end,
 }
