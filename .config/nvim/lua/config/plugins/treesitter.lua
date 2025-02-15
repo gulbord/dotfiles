@@ -21,7 +21,10 @@ return {
       -- List of parsers to ignore installing (or "all")
       highlight = {
         enable = true,
-        disable = function(_, buf)
+        disable = function(lang, buf)
+          if lang == "latex" then
+            return true
+          end
           local max_filesize = 100 * 1024 -- 100 kB
           local ok, stats =
             pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(buf))
