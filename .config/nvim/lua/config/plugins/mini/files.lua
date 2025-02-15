@@ -26,11 +26,11 @@ end
 
 -- Open every kind of file with 'o'
 local gio_open = function()
-  local fs_entry = (files.get_fs_entry() or {}).path
+  local fs_entry = files.get_fs_entry() or {}
   if not fs_entry then
     return
   end
-  vim.notify(vim.inspect(fs_entry))
+  vim.notify(vim.inspect(fs_entry.path))
   vim.fn.system(string.format("gio open '%s'", fs_entry.path))
 end
 
