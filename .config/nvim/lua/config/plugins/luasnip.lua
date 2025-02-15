@@ -37,8 +37,8 @@ return {
       require("luasnip.loaders").edit_snippet_files()
     end, { desc = "Edit LuaSnip snippets" })
 
-    require("luasnip.loaders.from_lua").lazy_load({
-      paths = { "~/.config/nvim/lua/config/snippets" },
-    })
+    local snip_paths = { "~/.config/nvim/lua/config/snippets" }
+    require("luasnip.loaders.from_lua").lazy_load({ paths = snip_paths })
+    require("luasnip.loaders.from_snipmate").lazy_load({ paths = snip_paths })
   end,
 }
