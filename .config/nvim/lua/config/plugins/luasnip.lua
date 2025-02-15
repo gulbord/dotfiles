@@ -13,7 +13,15 @@ return {
       ls.expand()
     end, { silent = true })
     vim.keymap.set({ "i", "s" }, "<Tab>", function()
-      ls.jump(1)
+      if ls.locally_jumpable(1) then
+        ls.jump(1)
+      else
+        vim.api.nvim_feedkeys(
+          vim.api.nvim_replace_termcodes("<Tab>", true, false, true),
+          "n",
+          false
+        )
+      end
     end, { silent = true })
     vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
       ls.jump(-1)
@@ -24,6 +32,10 @@ return {
         ls.change_choice(1)
       end
     end, { silent = true })
+
+    vim.api.nvim_create_user_command("LuaSnipEdit", function()
+      require("luasnip.loaders").edit_snippet_files()
+    end, { desc = "Edit LuaSnip snippets" })
 
     require("luasnip.loaders.from_lua").lazy_load({
       paths = { "~/.config/nvim/lua/config/snippets" },
