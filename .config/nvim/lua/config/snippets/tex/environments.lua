@@ -8,7 +8,7 @@ local rep = require("luasnip.extras").rep
 local conds = require("luasnip.extras.expand_conditions")
 local utils = require("config.plugins.luasnip.utils")
 
-ls.add_snippets({
+ls.add_snippets("tex", {
   s(
     { trig = "beg", desc = "Generic environment" },
     fmta(
