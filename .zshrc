@@ -229,6 +229,10 @@ function earbuds() {
   fi
 }
 
+function play() {
+  mpv `yt-dlp -f ba --get-url $1`
+}
+
 # Starship prompt
 #eval "$(starship init zsh)"
 
