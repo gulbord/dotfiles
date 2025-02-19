@@ -40,7 +40,7 @@ map(
   { desc = "Open diagnostic float" }
 )
 
--- LSP references
+-- LSP stuff
 map("n", "grn", vim.lsp.buf.rename, { desc = "Rename all references" })
 map("n", "gra", vim.lsp.buf.code_action, { desc = "Select code action" })
 map(
