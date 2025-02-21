@@ -6,6 +6,9 @@ return {
     local opts = {
       hook = {
         on_filetype = function()
+          vim.g.r_indent_align_args = 0
+          vim.g.r_indent_ess_comments = 0
+          vim.g.r_indent_ess_compatible = 0
           vim.keymap.set(
             "n",
             "<C-CR>",
@@ -18,19 +21,25 @@ return {
             "<plug>RDSendSelection",
             { buffer = true, desc = "Send selection to R console" }
           )
+          vim.keymap.set(
+            "i",
+            "<C-,>",
+            "<Plug>RInsertAssign",
+            { buffer = true, desc = "Insert <-" }
+          )
+          vim.keymap.set(
+            "i",
+            "<M-->",
+            "<Plug>RmdInsertChunk",
+            { buffer = true, desc = "Insert Rmd chunk" }
+          )
         end,
       },
       R_args = { "--quiet", "--no-save" },
       R_app = "R",
-      assignment_keymap = "<C-,>",
-      pipe_keymap = "<C-;>",
       auto_start = "no",
       open_html = "no",
-      rmdchunk = "`r",
     }
     require("r").setup(opts)
-    vim.g.r_indent_align_args = 0
-    vim.g.r_indent_ess_comments = 0
-    vim.g.r_indent_ess_compatible = 0
   end,
 }
