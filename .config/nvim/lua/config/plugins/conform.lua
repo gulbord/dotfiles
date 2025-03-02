@@ -7,6 +7,7 @@ return {
   opts = {
     formatters_by_ft = {
       c = { "clang-format" },
+      clojure = { "zprint" },
       cpp = { "clang-format" },
       haskell = { "fourmolu" },
       lua = { "stylua" },

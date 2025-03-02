@@ -8,6 +8,8 @@ return {
 
     require("mini.statusline").setup({ use_icons = true })
 
+    require("mini.ai").setup()
+
     require("mini.surround").setup({
       mappings = {
         add = "<leader>sa",
