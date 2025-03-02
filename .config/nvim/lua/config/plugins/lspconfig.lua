@@ -20,6 +20,7 @@ return {
   },
   opts = {
     servers = {
+      clojure_lsp = {},
       lua_ls = {
         settings = { lineLength = 80 },
       },
