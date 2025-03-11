@@ -8,10 +8,6 @@ return {
   {
     "saghen/blink.cmp",
     version = "*",
-    dependencies = {
-      -- Add sources
-      { "PaterJason/cmp-conjure" },
-    },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {

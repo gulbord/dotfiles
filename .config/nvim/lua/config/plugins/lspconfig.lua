@@ -26,14 +26,6 @@ return {
       },
       ocamllsp = {
         cmd = { "ocamllsp" },
-        filetypes = {
-          "ocaml",
-          "ocaml.menhir",
-          "ocaml.interface",
-          "ocaml.ocamllex",
-          "reason",
-          "dune",
-        },
       },
       basedpyright = {},
       r_language_server = {},

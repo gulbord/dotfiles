@@ -1,5 +1,5 @@
 return {
   "gpanders/nvim-parinfer",
-  ft = { "clojure" },
+  ft = { "clojure", "lisp" },
   lazy = true,
 }
