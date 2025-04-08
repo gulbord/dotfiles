@@ -49,16 +49,5 @@ return {
       },
       ignore_blank_lines = true,
     })
-
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = { "ocaml" },
-      callback = function(args)
-        local ft = vim.bo[args.buf].filetype
-        local fname = vim.api.nvim_buf_get_name(args.buf)
-        vim.keymap.set("n", "<leader>uf", function()
-          iron.send(ft, '#use "' .. fname .. '"')
-        end, { silent = true, desc = "Load current module in utop" })
-      end,
-    })
   end,
 }
